@@ -109,7 +109,8 @@ $estacionesTodas = [
         "Lerdo I" => ["LOTE 1 MANZ 1 ZONA 9 PERIF KM 12 350 Y LIB PERIF TRN GP LDO COL CENTO LERDO", "25.553822", "-103.527233", "Lerdo I"],
         "Lerdo II" => ["CALZ GUADALUPE VICTORIA  COL. U. HAB. DE LAS 5A # 42", "25.534967", "-103.518257", "Lerdo II"],
         "Bermejillo" => ["C. FERROCARRIL S/N BERMEJILLO DGO", "25.878825", "-103.618102", "Bermejillo"],
-        "Cuencame" => ["CARRETERA A FRESNILLO KM 1+900 EN CUENCAME DGO", "24.855976412795844", "-103.69609667527881", "Cuencamé"]
+        "Cuencame" => ["CARRETERA A FRESNILLO KM 1+900 EN CUENCAME DGO", "24.855976412795844", "-103.69609667527881", "Cuencamé"],
+        "YOOO" => ["hOLA", "25.5469962", "-103.4396285", "OLA"]
     ],
 ];
 
