@@ -349,7 +349,7 @@ async function getDirecciones() {
 }
 
 
-function zoom(lat, long, zoom = 13){
+function zoom(lat, long, zoom = 30){
     var coor = new google.maps.LatLng(lat, long);
     $("#map").fadeIn(100);
     map.setCenter(coor)
