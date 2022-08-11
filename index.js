@@ -314,7 +314,7 @@ function initMap() {
 
 async function getDirecciones() {
  
-    let response = await fetch('http://localhost/mapa-web-ramiro/estaciones.php?ciudad=todas')
+    let response = await fetch('http://localhost/mapa-web-ramiro/direcciones.php?ciudad=todas')
         let data = await response.json()
         $.each(data, function (indice, unaCarburacion) {
             var posicionCarburacion = new google.maps.LatLng(unaCarburacion[1], unaCarburacion[2]);
