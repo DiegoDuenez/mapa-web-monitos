@@ -314,13 +314,18 @@ function initMap() {
 
 async function getDirecciones() {
  
-    let response = await fetch('http://localhost/mapa-web-ramiro/direcciones.php?ciudad=todas')
+    let response = await fetch('http://127.0.0.1:3333/api/v1/showlocalizacion')
         let data = await response.json()
-        $.each(data, function (indice, unaCarburacion) {
-            var posicionCarburacion = new google.maps.LatLng(unaCarburacion[1], unaCarburacion[2]);
+        $.each(data.data, function (indice, locacion) {
+            /*console.log(data.data)
+            console.log(indice)
+            console.log(unaCarburacion.latitud)*/
+
+
+            var posicionCarburacion = new google.maps.LatLng(locacion.latitud, locacion.longitud);
             var icon;
             var iwcarburacion = new google.maps.InfoWindow();
-            var nombreEstacion = "Estación " + unaCarburacion[3]
+            var nombreEstacion = "Locación " + locacion.created_at
 
             icon = {
                 url: 'img/mono.png',
@@ -337,8 +342,8 @@ async function getDirecciones() {
             });
 
             google.maps.event.addListener(marker, 'click', function () {
-                var url = "https://www.google.com/maps/dir/Current+location/"+ unaCarburacion[1] + "," + unaCarburacion[2]; 
-                iwcarburacion.setContent('<p style="font-size: 1.2rem; font-weight: bold;">' + nombreEstacion + '</p> <br>' + unaCarburacion[0]  + ' <br> <a class="map__link" href="' + url +'" target="blank"> Como llegar</a>');
+                var url = "https://www.google.com/maps/dir/Current+location/"+ locacion.latitud + "," + locacion.longitud; 
+                iwcarburacion.setContent('<p style="font-size: 1.2rem; font-weight: bold;">' + nombreEstacion + '</p> <br>' + locacion.created_at  + ' <br> <a class="map__link" href="' + url +'" target="blank"> Como llegar</a>');
                 marker.info = iwcarburacion;
                 marker.info.open(map, marker);
             });
